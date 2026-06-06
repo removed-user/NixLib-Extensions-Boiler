@@ -5,7 +5,7 @@
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
-    nixpkgs-lib.url = "nix-community/nixpkgs.lib";
+    nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
   };
 
   outputs = inputs @ {
