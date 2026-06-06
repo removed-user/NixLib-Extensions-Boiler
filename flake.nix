@@ -9,6 +9,7 @@
   };
 
   outputs = inputs @ {
+    self,
     nixpkgs-lib,
     flake-parts,
     ...
@@ -22,8 +23,10 @@
   */
   let
     myCustomModule = {lib, ...}: {
+      imports = [./flakeModule.nix];
       _module.args.Mylib = {
-        lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
+        inherit lib;
+        # lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
         #or
         lib2.define_monad = rec {
           whatsAMonad = whatsAMonad: ''A Monad is just a monoid in the category of endofunctors'';
@@ -54,14 +57,16 @@
 
       # Export your module for downstream consumers in global spec
 
-      flakeModules.default = myCustomModule;
-
       # Use your injected library inside perSystem safely
 
-      templates = {
-        default = {
-          path = ./templates/in_mkFlake;
-          description = ''A minimal flake using flake-parts.'';
+      perSystem = {
+        Mylib,
+        lib,
+        ...
+      }: {
+      };
+      flake = {
+        templates = {
           in_mkFlake = {
             path = ./templates/in_mkFlake;
             description = ''A descriptive flake with features'';
@@ -74,19 +79,18 @@
             path = ./templates/flake-parts;
             description = ''A descriptive flake with features'';
           };
-        };
-      };
 
-      perSystem = {
-        Mylib,
-        lib,
-        ...
-      }: {
-        config.Mylib.lib = lib.mkOption lib.types.lazyAttrsOf lib.types.submodules;
-        options = {
-          badExample = Mylib.lib.func1; # Because I wrote no code for it
+          default = {
+            in_mkFlake = {
+              path = ./templates/in_mkFlake;
+              description = ''A descriptive flake with features'';
+            };
+          };
+        };
+        flakeModules = {
+          lib = myCustomModule;
+          default = myCustomModule;
         };
       };
-      flake = {};
     };
 }
