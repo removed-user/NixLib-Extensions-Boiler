@@ -82,7 +82,7 @@
         lib,
         ...
       }: {
-        options.Mylib = lib.types.lazyAttrsOf lib.types.submodules;
+        options.Mylib = lib.types.lazyAttrsOf lib.types.submodule;
         config = {
            
         };
