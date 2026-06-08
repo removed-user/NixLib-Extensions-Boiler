@@ -82,9 +82,9 @@
         lib,
         ...
       }: {
-        config.Mylib.lib = lib.mkOption lib.types.lazyAttrsOf lib.types.submodules;
-        options = {
-          badExample = Mylib.lib.func1; # Because I wrote no code for it
+        options.Mylib = lib.types.lazyAttrsOf lib.types.submodules;
+        config = {
+           
         };
       };
       flake = {};
