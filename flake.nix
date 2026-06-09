@@ -50,6 +50,7 @@
 
       imports = [
         myCustomModule
+inputs.flake-parts.flakeModules.modules
       ];
 
       # Export your module for downstream consumers in global spec
