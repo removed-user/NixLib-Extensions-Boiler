@@ -4,7 +4,6 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
-      flake = false;
     };
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
   };
@@ -49,36 +48,26 @@
        -  copying your lib to the store more than once
       */
 
+      disabledModules = [
+        inputs.flake-parts.flakeModules.nixosModules
+        inputs.flake-parts.flakeModules.nixosConfigurations
+        inputs.flake-parts.flakeModules.apps
+        inputs.flake-parts.flakeModules.devShells
+        inputs.flake-parts.flakeModules.formatter
+      ];
+
       imports = [
         myCustomModule
         inputs.flake-parts.flakeModules.flakeModules
         inputs.flake-parts.flakeModules.modules
+        inputs.flake-parts.flakeModules.debug
       ];
 
       # Export your module for downstream consumers in global spec
 
-      flakeModule.default = myCustomModule;
+      # flakeModules.default = myCustomModule;
 
       # Use your injected library inside perSystem safely
-
-      templates = {
-        default = {
-          path = ./templates/in_mkFlake;
-          description = ''A minimal flake using flake-parts.'';
-        };
-        in_mkFlake = {
-          path = ./templates/in_mkFlake;
-          description = ''A descriptive flake with features'';
-        };
-        pre_mkFlake = {
-          path = ./templates/pre_mkFlake;
-          description = ''A descriptive flake with features'';
-        };
-        flake-parts = {
-          path = ./templates/flake-parts;
-          description = ''A descriptive flake with features'';
-        };
-      };
 
       perSystem = {
         Mylib,
@@ -89,8 +78,28 @@
           type = lib.types.lazyAttrsOf lib.types.submodule;
         };
         config = {
+          debug = true;
         };
       };
-      flake = {};
+      flake = {
+        templates = {
+          default = {
+            path = ./templates/in_mkFlake;
+            description = ''A minimal flake using flake-parts.'';
+          };
+          in_mkFlake = {
+            path = ./templates/in_mkFlake;
+            description = ''A descriptive flake with features'';
+          };
+          pre_mkFlake = {
+            path = ./templates/pre_mkFlake;
+            description = ''A descriptive flake with features'';
+          };
+          flake-parts = {
+            path = ./templates/flake-parts;
+            description = ''A descriptive flake with features'';
+          };
+        };
+      };
     };
 }
