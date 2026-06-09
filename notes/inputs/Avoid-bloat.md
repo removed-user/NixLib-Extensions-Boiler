@@ -32,7 +32,4 @@ It's like nix users aren't happy unless they can introduce some unexpected behav
 
 - Neither is an infinitely curried 12 step-program. 
 
-
-
-You should probably... please? factor out atleast 4 of the steps.
-
+This is code **not an intervention**... but maybe it should be one? 
