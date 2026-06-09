@@ -22,6 +22,7 @@
   */
   let
     myCustomModule = {lib, ...}: {
+      # _class = "generic";
       _module.args.Mylib = {
         lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
         #or
@@ -65,8 +66,6 @@
 
       # Export your module for downstream consumers in global spec
 
-      # flakeModules.default = myCustomModule;
-
       # Use your injected library inside perSystem safely
 
       perSystem = {
@@ -100,6 +99,7 @@
             description = ''A descriptive flake with features'';
           };
         };
+        flakeModules = myCustomModule;
       };
     };
 }
