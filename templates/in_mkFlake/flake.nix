@@ -2,7 +2,8 @@
 flake-parts.lib.mkFlake { inherit inputs; } {
   systems = [ "x86_64-linux" "aarch64-darwin" ];
 
-  # 1. Define your module logic as a local variable
+  # 1.DOGFOOD: Part-1: 
+## Define your module logic as a local variable
   let
     myCustomModule = { lib, ... }: { 
       _module.args.Mylib = {           
@@ -10,7 +11,9 @@ flake-parts.lib.mkFlake { inherit inputs; } {
       };
     };
   in {
-    # 2. DOGFOOD: Import it so it runs inside this flake right now
+    # 2. DOGFOOD: Part-2: 
+##Import it so it runs inside this flake
+### this is still not exportdd as a flake output
     imports = [ 
       myCustomModule 
     ];
