@@ -59,10 +59,10 @@
       # Use your injected library inside perSystem safely
 
       templates = {
-        default = {
-          path = ./templates/in_mkFlake;
-          description = ''A minimal flake using flake-parts.'';
-};
+          default = {
+            path = ./templates/in_mkFlake;
+            description = ''A minimal flake using flake-parts.'';
+          };
           in_mkFlake = {
             path = ./templates/in_mkFlake;
             description = ''A descriptive flake with features'';
