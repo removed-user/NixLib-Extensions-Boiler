@@ -1,0 +1,16 @@
+### Builtins
+checks.nix 
+debug.nix 
+flake.nix 
+moduleWithSystem.nix 
+nixpkgs.nix 
+overlays.nix 
+perSystem.nix 
+transposition.nix 
+withSystem.nix 
+
+### Extras
+flakeModules.nix
+modules.nix
+partitions.nix
+touchup.nix
