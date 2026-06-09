@@ -26,8 +26,8 @@
         lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
         #or
         lib2.define_monad = rec {
-          whatsAMonad = whatsAMonad: ''A Monad is just a monoid in the category of endofunctors'';
-          __functor = whatsAMonad;
+          whatsAMonad = self: ''A Monad is just a monoid in the category of endofunctors'';
+          __functor = self: whatsAMonad;
         };
       };
     };
