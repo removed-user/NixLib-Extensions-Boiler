@@ -82,9 +82,10 @@
         lib,
         ...
       }: {
-        options.Mylib = lib.types.lazyAttrsOf lib.types.submodule;
+        options.Mylib = { 
+type = lib.types.lazyAttrsOf lib.types.submodule;
+};
         config = {
-           
         };
       };
       flake = {};
