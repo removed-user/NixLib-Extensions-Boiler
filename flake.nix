@@ -4,6 +4,7 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+      flake = false;
     };
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
   };
@@ -50,12 +51,13 @@
 
       imports = [
         myCustomModule
+        inputs.flake-parts.flakeModules.flakeModules
         inputs.flake-parts.flakeModules.modules
       ];
 
       # Export your module for downstream consumers in global spec
 
-      flakeModules.default = myCustomModule;
+      flakeModule.default = myCustomModule;
 
       # Use your injected library inside perSystem safely
 
