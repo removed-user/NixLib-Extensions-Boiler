@@ -354,4 +354,4 @@ perSystem = { pkgs, self', config, ... }: {
 - `final` - Work with easyOverlay
 - `moduleWithSystem` - Bring perSystem args to top-level
 
-Related: [Back to main guide](SKILL.md) | [Overlays guide](overlays.md) | [Advanced patterns](advanced.md)
+Related: [Back to main guide](Generic.md) | [Overlays guide](Overlays.md) | [Advanced patterns](Advanced.md)
