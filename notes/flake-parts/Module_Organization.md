@@ -312,4 +312,4 @@ perSystem = { system, lib, ... }: {
 2. Module is reusable? → Export as flakeModules
 3. Otherwise → Use simple imports
 
-Related: [Module arguments](module-arguments.md) | [Advanced patterns](advanced.md) | [Back to main guide](SKILL.md)
+Related: [Module arguments](Module_Arguments.md) | [Advanced patterns](Advanced.md) | [Back to main guide](Generic.md)
