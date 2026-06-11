@@ -412,4 +412,4 @@ Access all per-system configurations from top-level:
 - Custom outputs: Specialized flake structure needs
 - Debug mode: Complex configuration troubleshooting
 
-Related: [Module arguments](module-arguments.md) | [Modular organization](modular-organization.md) | [Back to main guide](SKILL.md)
+Related: [Module Arguments](Module_Arguments.md) | [Modular Organization](Modular_Organization.md) | [Back to main guide](Generic.md)
