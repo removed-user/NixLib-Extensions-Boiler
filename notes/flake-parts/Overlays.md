@@ -203,4 +203,4 @@ This allows consumers to apply your overlay and get your packages in their `pkgs
 - Want your packages available in the pkgs namespace
 - Need proper dependency resolution between packages
 
-Related: [Module arguments](module-arguments.md) | [Modular organization](modular-organization.md) | [Back to main guide](SKILL.md)
+Related: [Module arguments](Module_Arguments.md) | [Module Organization](Module_Organization.md) | [Back to main guide](Generic.md)
