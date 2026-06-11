@@ -1,6 +1,6 @@
-# Using Flake-Parts Expert Guide
+# Using Flake-Parts Guide
 
-This skill is a comprehensive guide for structuring and modularizing Nix flake configurations using flake-parts.
+This is a comprehensive guide for structuring and modularizing Nix flake configurations using flake-parts.
 
 ## File Structure
 
@@ -8,7 +8,7 @@ This skill consists of the following files:
 
 - **[Generic.md](./Generic.md)** - Main skill definition and basic usage
 - **[Module_Organization.md](./Module_Organization.md)** - Detailed explanation of module arguments
-- **[module_organization.md](./modular-organization.md)** - Best practices for modular organization
+- **[module_organization.md](./module_organization.md)** - Best practices for modular organization
 - **[Overlays.md](./Overlays.md)** - How to use the easyOverlay module
 - **[Advanced.md](./Advanced.md)** - Advanced features including partitions, custom outputs, and debugging
 
