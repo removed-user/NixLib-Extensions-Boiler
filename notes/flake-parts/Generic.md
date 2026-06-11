@@ -403,7 +403,7 @@ args: { }  # Won't receive special arguments
 
 For specialized flake-parts features, load these guides:
 
-- **[module-arguments.md](module-arguments.md)** - Complete reference for all module arguments, the @ pattern, and function signature inspection
-- **[overlays.md](overlays.md)** - easyOverlay module details, final vs pkgs distinction
-- **[modular-organization.md](modular-organization.md)** - importApply patterns, reusable flakeModules, dogfooding
-- **[advanced.md](advanced.md)** - Partitions, custom outputs, debug mode, migration from standard flakes
+- **[Module_Arguments.md](Module_Arguments.md)** - Complete reference for all module arguments, the @ pattern, and function signature inspection
+- **[Overlays.md](Overlays.md)** - easyOverlay module details, final vs pkgs distinction
+- **[Modular_Organization.md](Module_Organization.md)** - importApply patterns, reusable flakeModules, dogfooding
+- **[Advanced.md](Advanced.md)** - Partitions, custom outputs, debug mode, migration from standard flakes
