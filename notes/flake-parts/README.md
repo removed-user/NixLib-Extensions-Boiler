@@ -6,11 +6,11 @@ This skill is a comprehensive guide for structuring and modularizing Nix flake c
 
 This skill consists of the following files:
 
-- **[SKILL.md](./SKILL.md)** - Main skill definition and basic usage
-- **[module-arguments.md](./module-arguments.md)** - Detailed explanation of module arguments
-- **[modular-organization.md](./modular-organization.md)** - Best practices for modular organization
-- **[overlays.md](./overlays.md)** - How to use the easyOverlay module
-- **[advanced.md](./advanced.md)** - Advanced features including partitions, custom outputs, and debugging
+- **[Generic.md](./Generic.md)** - Main skill definition and basic usage
+- *[Module_Organization.md](./Module_Organization.md)** - Detailed explanation of module arguments
+- **[module_organization.md](./modular-organization.md)** - Best practices for modular organization
+- **[Overlays.md](./Overlays.md)** - How to use the easyOverlay module
+- **[Advanced.md](./Advanced.md)** - Advanced features including partitions, custom outputs, and debugging
 
 ## Overview
 
@@ -32,6 +32,6 @@ Please refer to the corresponding Markdown files for detailed information on eac
 ### Recommended Reading Order
 1. [Generic.md](./Generic.md) - Basic concepts and big picture
 2. [Module_Arguments.md](./Module_Arguments.md) - Understanding the module system
-3. [Module_Organization.md](./Modular_Organization.md) - Learning configuration patterns
-4. [overlays.md](./overlays.md) - How to create overlays
+3. [Module_Organization.md](./Module_Organization.md) - Learning configuration patterns
+4. [Overlays.md](./Overlays.md) - How to create overlays
 5. [Advanced.md](./Advanced.md) - Advanced features and troubleshooting
