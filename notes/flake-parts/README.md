@@ -7,7 +7,7 @@ This is a comprehensive guide for structuring and modularizing Nix flake configu
 This skill consists of the following files:
 
 - **[Generic.md](./Generic.md)** - Main skill definition and basic usage
-- **[Module_Arguements.md](./Module_Arguements.md)** - Detailed explanation of module arguments
+- **[Module_Arguments.md](./Module_Arguments.md)** - Detailed explanation of module arguments
 - **[module_organization.md](./module_organization.md)** - Best practices for modular organization
 - **[Overlays.md](./Overlays.md)** - How to use the easyOverlay module
 - **[Advanced.md](./Advanced.md)** - Advanced features including partitions, custom outputs, and debugging
