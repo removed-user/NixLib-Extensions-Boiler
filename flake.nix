@@ -2,7 +2,7 @@
   description = "A collection of flake templates for adding your own lib functions";
   inputs = {
     flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+      url = "github:removed-user/flake-parts/Add-a-Check-in-mkTransposedPersystemModule";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
     nixpkgs-lib.url = "github:nix-community/nixpkgs.lib";
@@ -21,17 +21,18 @@
   *imports = [${yourFlakeName}.myCustomModule];*
   */
   let
-    myCustomModule = {lib, ...}: {
-      # _class = "generic";
-      _module.args.Mylib = {
-        lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
-        #or
-        lib2.define_monad = rec {
-          whatsAMonad = self: ''A Monad is just a monoid in the category of endofunctors'';
-          __functor = self: whatsAMonad;
-        };
-      };
-    };
+    lib = nixpkgs-lib.lib;
+    # myCustomModule = {lib, ...}: {
+    #   # _class = "generic";
+    #   _module.args.Mylib = {
+    #     lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
+    #     #or
+    #     lib2.define_monad = rec {
+    #       whatsAMonad = self: ''A Monad is just a monoid in the category of endofunctors'';
+    #       __functor = self: whatsAMonad;
+    #     };
+    #      };
+    #    };
   in
     /*
     # 2. You "may" want to define a system type if necessary.
@@ -58,7 +59,7 @@
       ];
 
       imports = [
-        myCustomModule
+        # myCustomModule
         inputs.flake-parts.flakeModules.flakeModules
         inputs.flake-parts.flakeModules.modules
         inputs.flake-parts.flakeModules.debug
@@ -68,38 +69,15 @@
 
       # Use your injected library inside perSystem safely
 
-      perSystem = {
-        Mylib,
-        lib,
-        ...
-      }: {
-        options.Mylib = {
-          type = lib.types.lazyAttrsOf lib.types.submodule;
-        };
-        config = {
-          debug = true;
-        };
-      };
-      flake = {
-        templates = {
-          default = {
-            path = ./templates/in_mkFlake;
-            description = ''A minimal flake using flake-parts.'';
-          };
-          in_mkFlake = {
-            path = ./templates/in_mkFlake;
-            description = ''A descriptive flake with features'';
-          };
-          pre_mkFlake = {
-            path = ./templates/pre_mkFlake;
-            description = ''A descriptive flake with features'';
-          };
-          flake-parts = {
-            path = ./templates/flake-parts;
-            description = ''A descriptive flake with features'';
-          };
-        };
-        flakeModules = myCustomModule;
-      };
+      #     options.Mylib = {
+      #       type = lib.types.lazyAttrsOf lib.types.submodule;
     };
+  #  config = {
+  #   debug = true;
+  #   flake.templates = import ./templates/default.nix;
+  # };
+  # };
+  #  options.flake = {
+  #    # flakeModules.default = myCustomModule;
+  #  };
 }

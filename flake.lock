@@ -7,26 +7,27 @@
         ]
       },
       "locked": {
-        "lastModified": 1778716662,
-        "narHash": "sha256-m1Yf0wZ8j1OHjTc2UwHwyQRSnNeSgLJOd7q5Y45hzi4=",
-        "owner": "hercules-ci",
+        "lastModified": 1781814350,
+        "narHash": "sha256-hCPYM3STFXQXw55XdcvQ/CITnLqXW9wuY2qG8WgxWlI=",
+        "owner": "removed-user",
         "repo": "flake-parts",
-        "rev": "f7c1a2d347e4c52d5fb8d10cb4d94b5884e546fb",
+        "rev": "5eb2ffdcf1467f16da0a6d3ddfd77385b87ed10b",
         "type": "github"
       },
       "original": {
-        "owner": "hercules-ci",
+        "owner": "removed-user",
+        "ref": "Add-a-Check-in-mkTransposedPersystemModule",
         "repo": "flake-parts",
         "type": "github"
       }
     },
     "nixpkgs-lib": {
       "locked": {
-        "lastModified": 1780800655,
-        "narHash": "sha256-eVQuIiDIy24NIAW+yEirKosWHFYAml6dghmevWgruBE=",
+        "lastModified": 1781405675,
+        "narHash": "sha256-0iaTCZDEORJeWamOjfDZaoZZx686f7QO5oL3ynmj+ew=",
         "owner": "nix-community",
         "repo": "nixpkgs.lib",
-        "rev": "78afa8e310f34cba09443a5ef2fb47bfd21d294f",
+        "rev": "de42d44212d207476489bce163375d8306a26d59",
         "type": "github"
       },
       "original": {
