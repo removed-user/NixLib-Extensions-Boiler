@@ -20,26 +20,28 @@
   - Importable by users as seen below through
   *imports = [${yourFlakeName}.myCustomModule];*
   */
-  let
-    lib = nixpkgs-lib.lib;
-    # myCustomModule = {lib, ...}: {
-    #   # _class = "generic";
-    #   _module.args.Mylib = {
-    #     lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
-    #     #or
-    #     lib2.define_monad = rec {
-    #       whatsAMonad = self: ''A Monad is just a monoid in the category of endofunctors'';
-    #       __functor = self: whatsAMonad;
-    #     };
-    #      };
-    #    };
-  in
-    /*
-    # 2. You "may" want to define a system type if necessary.
-       -  For pure nix-lib outputs, it's not required, and **can cause** issues for consumers.
-        - If you're not exporting custom packages/modules/overlays, then you probably don't actually need it
-    */
-    flake-parts.lib.mkFlake {inherit inputs;} {
+  # let
+  # inherit nixpkgs-lib;
+  # lib = nixpkgs-lib.lib;
+  # myCustomModule = {lib, ...}: {
+  #   _class = "generic";
+  #   _module.args.Mylib = {
+  #     lib1 = import ./flakeModule.nix {inherit lib;}; # import a/the default flakeModule, and load lib from it
+  #     #or
+  #     lib2.define_monad = rec {
+  #       whatsAMonad = self: ''A Monad is just a monoid in the category of endofunctors'';
+  #       __functor = self: whatsAMonad;
+  #     };
+  #   };
+  # };
+  # in
+  /*
+  # 2. You "may" want to define a system type if necessary.
+     -  For pure nix-lib outputs, it's not required, and **can cause** issues for consumers.
+      - If you're not exporting custom packages/modules/overlays, then you probably don't actually need it
+  */
+    flake-parts.lib.mkFlake {
+      inherit (nixpkgs-lib) lib;
       #  systems = [ "x86_64-linux" ];
 
       /*
@@ -77,7 +79,7 @@
   #   flake.templates = import ./templates/default.nix;
   # };
   # };
-  #  options.flake = {
-  #    # flakeModules.default = myCustomModule;
-  #  };
+  # flake = {
+  # flakeModules.default = myCustomModule;
+  # };
 }
