@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781846721,
-        "narHash": "sha256-LlYANePgP4ZsgVTkUlMpMpZ6lJC5I8dKzs/n7NeEsro=",
+        "lastModified": 1781854242,
+        "narHash": "sha256-VVSlDtWSAswHsRIkFP+0wh4LeoiT+k+WVwQMjR7q4rA=",
         "owner": "removed-user",
         "repo": "flake-parts",
-        "rev": "288011a37ba41ba58582997d8c8e0226257a69ca",
+        "rev": "d73d2cae0ae89af87083dd901249880244f8d74d",
         "type": "github"
       },
       "original": {
